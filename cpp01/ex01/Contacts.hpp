@@ -2,7 +2,7 @@
 
 # include <iostream>
 
-class Contacts 
+class Contacts
 {
 	private:
 		std::string _fname;
@@ -12,6 +12,7 @@ class Contacts
 		std::string _secret;
 	public:
 		Contacts();
+		~Contacts();
 		Contacts(std::string _fname, std::string _lname, std::string _nick, std::string _number, std::string _secret);
 		std::string	getFirst();
 		std::string getLast();
