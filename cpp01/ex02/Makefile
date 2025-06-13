@@ -1,7 +1,6 @@
-SRCS = Zombie.cpp main.cpp zombieHorde.cpp
+SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
-HEADERS = Zombie.hpp
-NAME = Zombies
+NAME = brain
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++20
 

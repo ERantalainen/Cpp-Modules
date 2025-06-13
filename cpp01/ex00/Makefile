@@ -1,19 +1,20 @@
-NAME = megaphone
-SRCS = megaphone.cpp
-OBJ = $(SRCS:.cpp=.o)
+SRCS = Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
+OBJS = $(SRCS:.cpp=.o)
+HEADERS = Zombie.hpp
+NAME = Zombies
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++11
+FLAGS = -Wall -Wextra -Werror -std=c++20
 
 all: $(NAME)
 
-%.o: %.cpp
+%.o: %.cpp $(HEADERS)
 	$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME): $(OBJ)
-		$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+		$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
-clean: 
-	@rm -f $(OBJ)
+clean:
+	@rm -f $(OBJS)
 
 fclean: clean
 	@rm -f $(NAME)

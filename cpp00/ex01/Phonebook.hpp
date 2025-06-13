@@ -16,6 +16,7 @@ private:
 	bool		input(int count);
 public:
 	Phonebook();
+	~Phonebook();
 	void	add();
 	void	search();
 };

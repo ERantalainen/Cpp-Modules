@@ -5,29 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 23:27:28 by erantala          #+#    #+#             */
-/*   Updated: 2025/06/13 00:00:11 by erantala         ###   ########.fr       */
+/*   Created: 2025/06/12 17:53:03 by erantala          #+#    #+#             */
+/*   Updated: 2025/06/12 22:28:45 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 #include <iostream>
-
-Zombie* zombieHorde(int N, std::string name);
+#include "Phonebook.hpp"
+#include "Contacts.hpp"
 
 int	main ()
 {
-	Zombie *test;
-	int	n = 6;
-	int i = 0;
-
-	test = zombieHorde(n, "Chiecken Jockey");
-	while (i < n)
+	Phonebook list;
+	std::string input;
+	while (1)
 	{
-		test[i].announce();
-		i++;
+std::cout << "Please input a command: ADD, SEARCH, EXIT" << std::endl;
+	std::cin >> input;
+	if (input.compare("ADD") == 0)
+		list.add();
+	else if (input.compare("SEARCH") == 0)
+		list.search();
+	else if (input.compare("EXIT") == 0)
+		exit (0);
+	input.clear();
 	}
-
-	delete[] test;
-	return (0);
 }

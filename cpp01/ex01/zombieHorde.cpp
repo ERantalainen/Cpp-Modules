@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 23:27:28 by erantala          #+#    #+#             */
-/*   Updated: 2025/06/13 00:00:11 by erantala         ###   ########.fr       */
+/*   Created: 2025/06/12 23:48:39 by erantala          #+#    #+#             */
+/*   Updated: 2025/06/12 23:56:28 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
-#include <iostream>
 
-Zombie* zombieHorde(int N, std::string name);
-
-int	main ()
+Zombie* zombieHorde(int N, std::string name)
 {
-	Zombie *test;
-	int	n = 6;
-	int i = 0;
-
-	test = zombieHorde(n, "Chiecken Jockey");
-	while (i < n)
+	int	i = 0;
+	
+	Zombie* res = new Zombie[N];
+	while (i < N)
 	{
-		test[i].announce();
+		res[i].setName(name);
 		i++;
 	}
-
-	delete[] test;
-	return (0);
+	return (res);
 }

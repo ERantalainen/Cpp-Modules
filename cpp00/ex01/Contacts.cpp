@@ -6,11 +6,13 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 02:19:58 by erantala          #+#    #+#             */
-/*   Updated: 2025/06/11 02:34:38 by erantala         ###   ########.fr       */
+/*   Updated: 2025/06/12 22:19:09 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contacts.hpp"
+
+Contacts::~Contacts(){}
 
 Contacts::Contacts(): _fname(""), _lname(""), _nick(""), _number(""), _secret("")
 {}

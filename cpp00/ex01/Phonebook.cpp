@@ -2,6 +2,8 @@
 #include <string>
 #include <iostream>
 
+Phonebook::~Phonebook(){}
+
 Phonebook::Phonebook()
 {
 	count = 0;
@@ -10,17 +12,16 @@ Phonebook::Phonebook()
 
 void Phonebook::add()
 {
-
-
 	if (count < 8)
 	{
 		input(count);
+		count++;
 		return ;
 	}
 	else
 	{
-		count = oldest;
-		oldest = (oldest + 1) % 8;
+		count = oldest % 8;
+		oldest++;
 		input(count);
 	}
 	return ;
@@ -32,14 +33,15 @@ void Phonebook::search()
 
 	display_list();
 	std::cout << "Choose index to display" << std::endl;
-	while (1)
-	{
-		std::cin >> input;
-		if (input.size() > 1)
-			break ;
-		if (input[0] > '0' && input[0] < '9')
+	std::cin >> input;
+	if (input.size() > 1)
+		std::cout << "Please choose a valid index" << std::endl;
+	else if (stoi(input) > count)
+		std::cout << "Choose an index between 0 and " + std::to_string(count) << std::endl;
+	else if (input[0] > '0' && input[0] < '9')
 			display_contact(stoi(input));
-	}
+	else
+		std::cout << "Please choose a valid index" << std::endl;
 }
 
 
@@ -47,7 +49,18 @@ void	Phonebook::display_contact(int index)
 {
 	std::string	temp;
 
-	// print out book[i] details
+	index = index - 1;
+	temp = book[index].getFirst();
+	std::cout << "First name:" + temp << std::endl;
+	temp = book[index].getLast();
+	std::cout << "Last name:" + temp << std::endl;
+	temp = book[index].getNick(); 
+	std::cout << "Nickname: " + temp << std::endl;
+	temp = book[index].getNbr();
+	std::cout << "Number: " + temp << std::endl;
+	temp = book[index].getSecret();
+	std::cout << "Darkest secret: " + temp << std::endl;
+	return ;
 }
 
 static	std::string trunc(std::string str)
@@ -69,6 +82,7 @@ bool Phonebook::input(int index)
 	std::string nick;
 	std::string number;
 	std::string secret;
+	
 	std::cout << "First name:" << std::endl;
 	std::cin >> first;
 	if (first.empty())
@@ -120,7 +134,8 @@ void	Phonebook::display_list()
 
 	while (i < count)
 	{
-		std::cout << std::right << std::setw(10) << 'i' + '|';
+		temp = std::to_string(i + 1);
+		std::cout << std::right << std::setw(10) << temp + "|";
 		temp = book[i].getFirst();
 		temp = trunc(temp);
 		std::cout << std::right << std::setw(10) << temp + "|";
@@ -130,5 +145,6 @@ void	Phonebook::display_list()
 		temp = book[i].getNick();
 		temp = trunc(temp);
 		std::cout << std::right << std::setw(10) << temp + "|" << std::endl;
+		i++;
 	}
 }
