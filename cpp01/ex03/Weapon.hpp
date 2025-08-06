@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 22:51:24 by erantala          #+#    #+#             */
-/*   Updated: 2025/07/31 17:42:43 by erantala         ###   ########.fr       */
+/*   Created: 2025/07/31 17:43:01 by erantala          #+#    #+#             */
+/*   Updated: 2025/07/31 19:23:23 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 #include <iostream>
 
-class Zombie
+class Weapon
 {
 	private:
-		std::string	_name;
-
+		std::string type;
+	
 	public:
-		
-		void		announce(void);
-		void		setName(std::string _name);
-		Zombie();
-		Zombie(std::string name);
-		~Zombie();
-};
+		std::string	getType();
+		void		setType(std::string new_type);
+		Weapon(std::string type);
+		~Weapon();
+}

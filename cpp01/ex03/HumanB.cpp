@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 22:51:24 by erantala          #+#    #+#             */
-/*   Updated: 2025/07/31 17:42:43 by erantala         ###   ########.fr       */
+/*   Created: 2025/07/31 21:53:02 by erantala          #+#    #+#             */
+/*   Updated: 2025/07/31 23:05:33 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
 #include <iostream>
+#include <Weapon.hpp>
+#include <HumanB.hpp>
 
-class Zombie
+void HumanB::attack()
 {
-	private:
-		std::string	_name;
+	std::cout << _name + "attacks with their" + weapon.getType() << std::endl;
+}
 
-	public:
-		
-		void		announce(void);
-		void		setName(std::string _name);
-		Zombie();
-		Zombie(std::string name);
-		~Zombie();
-};
+void	HumanB::setName(std::string new_name)
+{
+	_name = new_name;
+}
+
+HumanB::HumanB(std::string _name) : _name(_name)
+{
+	weapon = new Weapon("unarmed");
+}
+
+
+void	HumanB::setWeapon(Weapon &new_weapon)
+{
+	weapon = &new_weapon;
+}
+
+HumanB::~HumanB()
+{}

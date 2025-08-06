@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/12 22:51:24 by erantala          #+#    #+#             */
-/*   Updated: 2025/07/31 17:42:43 by erantala         ###   ########.fr       */
+/*   Created: 2025/07/31 19:21:36 by erantala          #+#    #+#             */
+/*   Updated: 2025/07/31 23:05:24 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-
 #include <iostream>
+#include <HumanA.hpp>
+#include <Weapon.hpp>
 
-class Zombie
+void HumanA::attack()
 {
-	private:
-		std::string	_name;
+	std::cout << _name + "attacks with their" + weapon.getType() << std::endl;
+}
 
-	public:
-		
-		void		announce(void);
-		void		setName(std::string _name);
-		Zombie();
-		Zombie(std::string name);
-		~Zombie();
-};
+void	HumanA::setName(std::string new_name)
+{
+	_name = new_name;
+}
+
+HumanA::HumanA(std::string _name, Weapon &weapon) : _name(_name), weapon(weapon)
+{}
+
+HumanA::~HumanA()
+{}
+
+
+

@@ -8,7 +8,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++20
 all: $(NAME)
 
 %.o: %.cpp $(HEADERS)
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(FLAGS)-c $< -o $@
 
 $(NAME): $(OBJS)
 		$(CC) $(FLAGS) $(OBJS) -o $(NAME)
