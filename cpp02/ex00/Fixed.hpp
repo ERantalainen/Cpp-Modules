@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 18:35:27 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/06 16:35:29 by erantala         ###   ########.fr       */
+/*   Created: 2025/08/07 16:07:22 by erantala          #+#    #+#             */
+/*   Updated: 2025/08/07 18:00:23 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Weapon.hpp"
+#pragma once
 
-std::string	Weapon::getType()
+class Fixed
 {
-	return (type);
-}
-
-void	Weapon::setType(std::string	new_type)
-{
-	type = new_type;
-}
-
-Weapon::Weapon(std::string type)	: type(type)
-{}
-
-Weapon::~Weapon(){}
+	private:
+		int						_value;
+		static const u_int8_t	_fract = 8;
+	public:
+		Fixed();
+		~Fixed();
+		Fixed(const Fixed &obj);
+		Fixed& operator=(const Fixed& obj);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+};

@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*    Harl.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/31 18:35:27 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/06 16:35:29 by erantala         ###   ########.fr       */
+/*   Created: 2025/08/07 15:01:52 by erantala          #+#    #+#             */
+/*   Updated: 2025/08/07 15:17:07 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include <iostream>
-#include "Weapon.hpp"
 
-std::string	Weapon::getType()
+class Harl
 {
-	return (type);
-}
-
-void	Weapon::setType(std::string	new_type)
-{
-	type = new_type;
-}
-
-Weapon::Weapon(std::string type)	: type(type)
-{}
-
-Weapon::~Weapon(){}
+	private:
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+	public:
+		void complain(std::string level);
+};

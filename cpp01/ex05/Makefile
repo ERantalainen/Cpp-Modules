@@ -11,10 +11,10 @@ LGREEN='\033[0;35m'
 CYAN='\033[0;36m'
 WHITE='\033[0;37m'
 
-SRCS = HumanA.cpp HumanB.cpp main.cpp Weapon.cpp
+SRCS = Harl.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
-HEADERS = HumanA.hpp HumanB.hpp Weapon.hpp
-NAME = violence
+HEADERS = Harl.hpp
+NAME = Harl
 CC = @c++
 FLAGS = -Wall -Wextra -Werror -std=c++20
 
@@ -26,7 +26,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 		$(CC) $(FLAGS) $(OBJS) -o $(NAME)
-		@echo -e $(GREEN)Compiled violence$(OFF)
+		@echo -e $(GREEN)Compiled$(OFF)
 
 clean:
 	@rm -f $(OBJS)

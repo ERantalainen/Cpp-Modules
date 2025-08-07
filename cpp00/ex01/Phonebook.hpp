@@ -19,6 +19,4 @@ public:
 	~Phonebook();
 	void	add();
 	void	search();
-};
-
-// 00000index|00000NAME|000SURNAME|00Nickname
+}
