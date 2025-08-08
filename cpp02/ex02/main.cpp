@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 17:56:43 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/08 19:05:26 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/08 19:18:04 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main( void ) {
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << (a < b) << std::endl;
-	Fixed c(a);
+	Fixed const c(a);
 	std::cout << "C is " << c << " and A is " << a << std::endl;
 	a = a - c - c - c;
 	std::cout << a << std::endl;
@@ -34,5 +34,8 @@ int main( void ) {
 	std::cout << "b * b is " << d << std::endl;
 	std::cout << "b / b " << (b / b) << std::endl;
 	std::cout << "b <= b " << (b <= b) << " b <= a " << (b <= a) << std::endl;
+	std::cout << "b != a " << (b != a) << std::endl;
+	std::cout << "b == a " << (b == a) << std::endl;
+	std::cout << Fixed::max(b, c) << std::endl;
 	return 0;
 }

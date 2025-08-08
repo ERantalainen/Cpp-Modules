@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:07:22 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/08 18:38:58 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/08 19:21:02 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Fixed
 		Fixed					operator*(const Fixed& obj) const;
 		Fixed					operator/(const Fixed& obj) const;
 		std::strong_ordering	operator<=>(const Fixed& obj) const;
+		bool					operator==(const Fixed &obj) const;
 		Fixed						operator++(int);
 		Fixed						operator--(int);
 		Fixed						operator++();
@@ -45,9 +46,9 @@ class Fixed
 		int		toInt(void) const;
 
 		static Fixed&	min(Fixed	&obj1, Fixed &obj2);
-		static Fixed&	min(const Fixed &obj1, const Fixed &obj2);
+		static const Fixed&	min(const Fixed &obj1, const Fixed &obj2);
 		static Fixed&	max(Fixed	&obj1, Fixed &obj2);
-		static Fixed&	max(const Fixed &obj1, const Fixed &obj2);
+		static const Fixed&	max(const Fixed &obj1, const Fixed &obj2);
 };
 
 std::ostream&	operator<<(std::ostream &out, Fixed const& obj);

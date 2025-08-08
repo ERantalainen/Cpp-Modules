@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:14:46 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/08 18:59:19 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/08 19:21:29 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,13 @@ Fixed	&Fixed::operator=(const Fixed &obj)
 std::strong_ordering	Fixed::operator<=>(const Fixed &obj) const
 {
 	return (this->getRawBits() <=> obj.getRawBits());
+}
+
+bool Fixed::operator==(const Fixed &obj) const
+{
+	if (this->getRawBits() == obj.getRawBits())
+		return (1);
+	return (0);
 }
 
 Fixed	Fixed::operator+(const Fixed& obj) const
@@ -130,7 +137,7 @@ Fixed&	Fixed::min(Fixed &obj1, Fixed &obj2)
 		return obj2;
 }
 
-const Fixed&	min(const Fixed &obj1, const Fixed &obj2)
+const Fixed&	Fixed::min(const Fixed &obj1, const Fixed &obj2)
 {
 	if (obj1.getRawBits() < obj2.getRawBits())
 		return obj1;
@@ -140,15 +147,15 @@ const Fixed&	min(const Fixed &obj1, const Fixed &obj2)
 
 Fixed&	Fixed::max(Fixed &obj1, Fixed &obj2)
 {
-	if (obj1.getRawBits() < obj2.getRawBits())
+	if (obj1.getRawBits() > obj2.getRawBits())
 		return obj1;
 	else
 		return obj2;
 }
 
-const Fixed&	max(const Fixed &obj1, const Fixed &obj2)
+const Fixed&	Fixed::max(const Fixed &obj1, const Fixed &obj2)
 {
-	if (obj1.getRawBits() < obj2.getRawBits())
+	if (obj1.getRawBits() > obj2.getRawBits())
 		return obj1;
 	else
 		return obj2;
