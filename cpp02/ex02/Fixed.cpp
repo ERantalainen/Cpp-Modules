@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 16:14:46 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/08 19:21:29 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/09 23:27:56 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Fixed::Fixed(const Fixed &obj)
 Fixed::Fixed(const float val)
 {
 	std::cout << "Float constructor called\n";
-	_value = (val) * ((float)(1 << _fract));
+	_value = roundf((val) * ((float)(1 << _fract)));
 }
 
 Fixed::Fixed(const int val)
