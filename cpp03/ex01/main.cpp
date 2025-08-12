@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 15:43:59 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/11 17:45:06 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:03:14 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 int		main ()
 {
-	Claptrap one;
-	Claptrap two ("Super Clap");
+	ClapTrap one;
+	ClapTrap two ("Super Clap");
 	ScavTrap three("Scavvie");
 	ScavTrap four(three);
 	ScavTrap five;

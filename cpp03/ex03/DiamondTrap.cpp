@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 18:07:42 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/11 18:38:14 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:08:29 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,9 @@ void	DiamondTrap::whoAmI()
 		return ;
 	}
 	std::cout << "I am " << _name << " and " << ClapTrap::_name << std::endl;
+}
+
+void	DiamondTrap::attack(const std::string& target)
+{
+	ScavTrap::attack(target);
 }

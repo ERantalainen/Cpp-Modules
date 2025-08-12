@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 16:22:01 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/12 16:02:50 by erantala         ###   ########.fr       */
+/*   Created: 2025/08/12 16:15:25 by erantala          #+#    #+#             */
+/*   Updated: 2025/08/12 16:20:07 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "Brain.hpp"
 
-#include <iostream>
-#include "ClapTrap.hpp"
-
-class FragTrap: public ClapTrap
+Brain::Brain()
 {
-	public:
-		void	attack(const std::string& target);
-		FragTrap();
-		FragTrap(std::string name);
-		~FragTrap();
-		FragTrap& operator=(const FragTrap &obj);
-		FragTrap(const FragTrap &obj);
-		void	highFivesGuys(void);
-};
+	std::cout << "A brain has been made\n";
+}
 
+Brain::~Brain()
+{
+	std::cout << "Brain has withered away\n";
+}
+
+Brain::Brain(const Brain &obj)
+{
+	*this = obj;
+	std::cout << "A copy of brain has been made\n";
+}
+
+Brain	&Brain::operator=(const Brain &obj)
+{
+	ideas = obj.ideas;
+	return *this;
+}

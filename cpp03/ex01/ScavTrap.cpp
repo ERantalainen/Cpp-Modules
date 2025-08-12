@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:33:41 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/11 17:43:47 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:00:50 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,20 @@ void	ScavTrap::GuardGate()
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap is scrap again\n";
+}
+
+void	ScavTrap::attack(const std::string& target)
+{
+	if (health <= 0)
+	{
+		std::cout << _name << " is already dead" << std::endl;
+		return ;
+	}
+	if (energy <= 0)
+	{
+		std::cout << _name << " is too tired to do that\n";
+		return ;
+	}
+	std::cout << _name << " throws junk at " << target << " for " << damage << std::endl;
+	energy--;
 }

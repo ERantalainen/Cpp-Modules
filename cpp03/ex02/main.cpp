@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 15:43:59 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/11 17:54:44 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:04:29 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 int		main ()
 {
-	Claptrap one;
-	Claptrap two ("Super Clap");
+	ClapTrap one;
+	ClapTrap two ("Super Clap");
 	FragTrap three("Thermal Detonator");
 	FragTrap four(three);
 	FragTrap five;

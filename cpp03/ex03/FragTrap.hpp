@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:22:01 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/11 18:26:34 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:05:23 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 class FragTrap: virtual public ClapTrap
 {
 	public:
+		void	attack(const std::string& target);
 		FragTrap();
 		FragTrap(std::string name);
 		~FragTrap();
@@ -25,3 +26,4 @@ class FragTrap: virtual public ClapTrap
 		FragTrap(const FragTrap &obj);
 		void	highFivesGuys(void);
 };
+

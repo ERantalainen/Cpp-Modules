@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 16:33:41 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/11 17:54:31 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:04:43 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,20 @@ void	FragTrap::highFivesGuys()
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap blew up\n";
+}
+
+void	FragTrap::attack(const std::string& target)
+{
+	if (health <= 0)
+	{
+		std::cout << _name << " is already dead" << std::endl;
+		return ;
+	}
+	if (energy <= 0)
+	{
+		std::cout << _name << " is too tired to do that\n";
+		return ;
+	}
+	std::cout << _name << " throws grenades at " << target << " for " << damage << std::endl;
+	energy--;
 }

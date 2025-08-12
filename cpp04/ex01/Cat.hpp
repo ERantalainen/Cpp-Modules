@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 16:22:01 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/12 16:02:50 by erantala         ###   ########.fr       */
+/*   Created: 2025/08/12 14:59:49 by erantala          #+#    #+#             */
+/*   Updated: 2025/08/12 16:11:04 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class FragTrap: public ClapTrap
+class Cat: public Animal
 {
+	private:
+		Brain *_brain;
 	public:
-		void	attack(const std::string& target);
-		FragTrap();
-		FragTrap(std::string name);
-		~FragTrap();
-		FragTrap& operator=(const FragTrap &obj);
-		FragTrap(const FragTrap &obj);
-		void	highFivesGuys(void);
+		Cat();
+		~Cat();
+		Cat(const Cat &obj);
+		Cat &operator=(const Cat &obj);
+		void	makeSound() const;
 };
-

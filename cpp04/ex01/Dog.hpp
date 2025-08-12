@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/11 16:22:01 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/12 16:02:50 by erantala         ###   ########.fr       */
+/*   Created: 2025/08/12 14:55:18 by erantala          #+#    #+#             */
+/*   Updated: 2025/08/12 16:11:00 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "ClapTrap.hpp"
-
-class FragTrap: public ClapTrap
+#include "Animal.hpp"
+#include "Brain.hpp"
+class Dog: public Animal
 {
+	private:
+		Brain *_brain;
 	public:
-		void	attack(const std::string& target);
-		FragTrap();
-		FragTrap(std::string name);
-		~FragTrap();
-		FragTrap& operator=(const FragTrap &obj);
-		FragTrap(const FragTrap &obj);
-		void	highFivesGuys(void);
+		Dog();
+		~Dog();
+		Dog(const Dog &obj);
+		Dog &operator=(const Dog &obj);
+		void	makeSound() const;
 };
-

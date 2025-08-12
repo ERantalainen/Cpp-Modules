@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 15:31:48 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/11 18:25:08 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:02:43 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class ClapTrap
 		int			energy = 10;
 		int			damage = 0;
 	public:
-		void	attack(const std::string& target);
+		virtual void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
 		ClapTrap(std::string name);
