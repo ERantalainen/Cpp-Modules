@@ -1,46 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongWrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 15:00:46 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/13 15:49:09 by erantala         ###   ########.fr       */
+/*   Created: 2025/08/12 15:04:09 by erantala          #+#    #+#             */
+/*   Updated: 2025/08/12 15:04:22 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Cat.hpp"
-#include "Brain.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat()
+WrongCat::WrongCat()
 {
-	_type = "Cat";
-	std::cout << "Cat constructor called\n";
-	_brain = new Brain;
+	_type = "WrongCat";
+	std::cout << "WrongCat constructor called\n";
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	delete _brain;
-	std::cout << "Cat has died\n";
+	std::cout << "WrongCat has died\n";
 }
 
-Cat::Cat (const Cat &obj)
+WrongCat::WrongCat (const WrongCat &obj)
 {
-	std::cout << "Cat has been cloned\n";
+	std::cout << "WrongCat has been cloned\n";
 	*this = obj;
 }
 
-Cat	&Cat::operator=(const Cat &obj)
+WrongCat	&WrongCat::operator=(const WrongCat &obj)
 {
-	std::cout << "Cat clone assignment called\n";
+	std::cout << "WrongCat clone assignment called\n";
 	this->_type = obj._type;
 	return	*this;
-}
-
-void	Cat::makeSound() const
-{
-	std::cout << "MEEEEEEEEEOWWWWWWWWWWWWWWWWWW\n";
 }

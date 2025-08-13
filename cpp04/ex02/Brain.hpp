@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 16:15:25 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/13 15:43:46 by erantala         ###   ########.fr       */
+/*   Created: 2025/08/12 15:41:21 by erantala          #+#    #+#             */
+/*   Updated: 2025/08/12 16:09:53 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#pragma once
 
-Brain::Brain()
-{
-	std::cout << "A brain has been made\n";
-}
+#include <iostream>
 
-Brain::~Brain()
+class Brain
 {
-	std::cout << "Brain has withered away\n";
-}
-
-Brain::Brain(const Brain &obj)
-{
-	*this = obj;
-	std::cout << "A copy of brain has been made\n";
-}
-
-Brain	&Brain::operator=(const Brain &obj)
-{
-	for (int i = 0; i < 100; ++i)
-		this->ideas[i] = obj.ideas[i];
-	return *this;
-}
+	protected:
+		std::string	ideas[100];
+	public:
+		Brain();
+		virtual ~Brain();
+		Brain(const Brain &obj);
+		Brain &operator=(const Brain &obj);
+};

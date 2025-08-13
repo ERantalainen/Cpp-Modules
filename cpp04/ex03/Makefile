@@ -11,9 +11,9 @@ LGREEN='\033[0;35m'
 CYAN='\033[0;36m'
 WHITE='\033[0;37m'
 
-SRCS = Brain.cpp Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+SRCS =
 OBJS = $(SRCS:.cpp=.o)
-HEADERS = Dog.hpp Cat.hpp Animal.hpp WrongAnimal.hpp WrongCat.hpp Brain.hpp
+HEADERS =
 NAME = Zoo
 CC = @c++
 FLAGS = -Wall -Wextra -Werror -std=c++20

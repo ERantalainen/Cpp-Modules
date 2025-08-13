@@ -1,46 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 15:00:46 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/13 15:49:09 by erantala         ###   ########.fr       */
+/*   Created: 2025/08/12 14:49:38 by erantala          #+#    #+#             */
+/*   Updated: 2025/08/13 17:14:44 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Animal.hpp"
 #include <iostream>
-#include "Cat.hpp"
-#include "Brain.hpp"
 
-Cat::Cat()
+Animal::Animal()
 {
-	_type = "Cat";
-	std::cout << "Cat constructor called\n";
-	_brain = new Brain;
+	std::cout << "Animal constructor called\n";
 }
 
-Cat::~Cat()
+Animal::~Animal()
 {
-	delete _brain;
-	std::cout << "Cat has died\n";
+	std::cout << "Animal has died\n";
 }
 
-Cat::Cat (const Cat &obj)
+Animal::Animal (const Animal &obj)
 {
-	std::cout << "Cat has been cloned\n";
+	std::cout << "Animal has been cloned\n";
 	*this = obj;
 }
 
-Cat	&Cat::operator=(const Cat &obj)
+Animal	&Animal::operator=(const Animal &obj)
 {
-	std::cout << "Cat clone assignment called\n";
+	std::cout << "Animal clone assignment called\n";
 	this->_type = obj._type;
 	return	*this;
 }
 
-void	Cat::makeSound() const
+std::string	Animal::getType() const
 {
-	std::cout << "MEEEEEEEEEOWWWWWWWWWWWWWWWWWW\n";
+	return _type;
 }

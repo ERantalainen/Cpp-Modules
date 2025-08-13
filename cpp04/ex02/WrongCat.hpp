@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 16:15:25 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/13 15:43:46 by erantala         ###   ########.fr       */
+/*   Created: 2025/08/12 15:03:51 by erantala          #+#    #+#             */
+/*   Updated: 2025/08/12 15:19:50 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Brain.hpp"
+#pragma once
 
-Brain::Brain()
-{
-	std::cout << "A brain has been made\n";
-}
+#include <iostream>
+#include "WrongAnimal.hpp"
 
-Brain::~Brain()
+class WrongCat: public WrongAnimal
 {
-	std::cout << "Brain has withered away\n";
-}
-
-Brain::Brain(const Brain &obj)
-{
-	*this = obj;
-	std::cout << "A copy of brain has been made\n";
-}
-
-Brain	&Brain::operator=(const Brain &obj)
-{
-	for (int i = 0; i < 100; ++i)
-		this->ideas[i] = obj.ideas[i];
-	return *this;
-}
+	public:
+		WrongCat();
+		~WrongCat();
+		WrongCat(const WrongCat &obj);
+		WrongCat &operator=(const WrongCat &obj);
+		void	makeSound() const;
+};

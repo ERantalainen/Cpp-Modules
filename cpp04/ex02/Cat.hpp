@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 16:15:25 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/13 15:43:46 by erantala         ###   ########.fr       */
+/*   Created: 2025/08/12 14:59:49 by erantala          #+#    #+#             */
+/*   Updated: 2025/08/12 16:11:04 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
+#include <iostream>
+#include "Animal.hpp"
 #include "Brain.hpp"
 
-Brain::Brain()
+class Cat: public Animal
 {
-	std::cout << "A brain has been made\n";
-}
-
-Brain::~Brain()
-{
-	std::cout << "Brain has withered away\n";
-}
-
-Brain::Brain(const Brain &obj)
-{
-	*this = obj;
-	std::cout << "A copy of brain has been made\n";
-}
-
-Brain	&Brain::operator=(const Brain &obj)
-{
-	for (int i = 0; i < 100; ++i)
-		this->ideas[i] = obj.ideas[i];
-	return *this;
-}
+	private:
+		Brain *_brain;
+	public:
+		Cat();
+		~Cat();
+		Cat(const Cat &obj);
+		Cat &operator=(const Cat &obj);
+		void	makeSound() const;
+};

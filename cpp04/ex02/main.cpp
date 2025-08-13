@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:01:41 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/13 16:11:26 by erantala         ###   ########.fr       */
+/*   Updated: 2025/08/13 17:16:00 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,10 @@ int main()
 		else
 			array[i] = new Cat();
 	}
-	const Animal* meta = new Animal();
+	// const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 	const WrongAnimal *wrong = new WrongCat();
-
 	std::cout << std::endl;
 	std::cout << wrong->getType() << " " << std::endl;
 	std::cout << j->getType() << " " << std::endl;
@@ -39,12 +38,11 @@ int main()
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	wrong->makeSound();
-	meta->makeSound();
 
 	std::cout << std::endl;
 	const Animal* clone(j);
+	clone->makeSound();
 	std::cout << std::endl;
-	delete meta;
 	delete wrong;
 	delete j;
 	delete i;
