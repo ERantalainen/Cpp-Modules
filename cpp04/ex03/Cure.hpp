@@ -10,7 +10,6 @@ class Cure : public AMateria
 		Cure(const Cure &copy);
 		~Cure();
 		Cure & operator=(const Cure &assign);
-
 	private:
 
 };
