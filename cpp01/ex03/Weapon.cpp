@@ -6,14 +6,14 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 18:35:27 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/06 16:35:29 by erantala         ###   ########.fr       */
+/*   Updated: 2025/09/03 16:53:44 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Weapon.hpp"
 
-std::string	Weapon::getType()
+const std::string	&Weapon::getType()
 {
 	return (type);
 }

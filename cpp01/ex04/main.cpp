@@ -1,26 +1,23 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/06 18:07:19 by erantala          #+#    #+#             */
-/*   Updated: 2025/08/07 15:00:41 by erantala         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <string>
 #include <iostream>
 #include <fstream>
 
+std::string	ft_replace(std::string str, std::string replace, size_t pos)
+{
+	std::string	ret;
+
+	std::cout << (str) << replace << " " << pos << std::endl;
+	ret = (str).substr(0, pos);
+	ret.append(replace);
+	return (ret);
+}
 
 int main (int argc, char **argv)
 {
 	std::string	new_name;
 	std::string	curr;
 	std::string	copy = "";
-	std::string	replacement;
+	std::string	ret;
 	size_t		pos;
 
 	if (argc < 4)
@@ -42,27 +39,16 @@ int main (int argc, char **argv)
 	new_name = argv[1];
 	new_name = new_name.append(".replace");
 	std::ofstream replace(new_name);
-	replacement = argv[2];
-	while(getline(file, curr))
+	getline(file, curr, '\0');
+	while (curr.find(argv[2]) != std::string::npos)
 	{
 		pos = curr.find(argv[2]);
-		if (pos != std::string::npos)
-		{
-			if (pos > 0)
-			{
-				copy = curr.substr(0, pos);
-				copy.append(argv[3]);
-			}
-			else
-				copy = argv[3];
-			copy = copy + curr.substr(pos + replacement.length(), std::string::npos);
-		}
-		else
-			copy = curr;
-		replace << copy << std::endl;
-		copy = copy.empty();
-		curr = curr.empty();
+		ret = ft_replace(curr, argv[3], pos);
+		curr = curr.substr(ret.length(), curr.length() - ret.length());
+		copy.append(ret);
 	}
+	copy.append(curr);
+	replace << copy << std::endl;
 	file.close();
 	replace.close();
 }

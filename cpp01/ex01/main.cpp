@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 23:27:28 by erantala          #+#    #+#             */
-/*   Updated: 2025/06/13 00:00:11 by erantala         ###   ########.fr       */
+/*   Updated: 2025/09/03 18:25:39 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,17 @@ Zombie* zombieHorde(int N, std::string name);
 
 int	main ()
 {
-	Zombie *test;
+	Zombie *test = nullptr;
 	int	n = 6;
 	int i = 0;
 
-	test = zombieHorde(n, "Chiecken Jockey");
+	try {
+		test = zombieHorde(n, "Chiecken Jockey");
+	} catch (...)
+	{
+		std::cerr << "Error allocating\n";
+		return (1);
+	}
 	while (i < n)
 	{
 		test[i].announce();
