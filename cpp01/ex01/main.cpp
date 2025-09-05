@@ -6,7 +6,7 @@
 /*   By: erantala <erantala@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 23:27:28 by erantala          #+#    #+#             */
-/*   Updated: 2025/09/03 18:25:39 by erantala         ###   ########.fr       */
+/*   Updated: 2025/09/05 15:27:51 by erantala         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main ()
 	int i = 0;
 
 	try {
-		test = zombieHorde(n, "Chiecken Jockey");
+		test = zombieHorde(n, "Baby Zombie");
 	} catch (...)
 	{
 		std::cerr << "Error allocating\n";

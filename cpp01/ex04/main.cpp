@@ -6,7 +6,6 @@ std::string	ft_replace(std::string str, std::string replace, size_t pos)
 {
 	std::string	ret;
 
-	std::cout << (str) << replace << " " << pos << std::endl;
 	ret = (str).substr(0, pos);
 	ret.append(replace);
 	return (ret);
@@ -17,6 +16,7 @@ int main (int argc, char **argv)
 	std::string	new_name;
 	std::string	curr;
 	std::string	copy = "";
+	std::string	target;
 	std::string	ret;
 	size_t		pos;
 
@@ -37,6 +37,7 @@ int main (int argc, char **argv)
 		return (1);
 	}
 	new_name = argv[1];
+	target = argv[2];
 	new_name = new_name.append(".replace");
 	std::ofstream replace(new_name);
 	getline(file, curr, '\0');
@@ -44,7 +45,7 @@ int main (int argc, char **argv)
 	{
 		pos = curr.find(argv[2]);
 		ret = ft_replace(curr, argv[3], pos);
-		curr = curr.substr(ret.length(), curr.length() - ret.length());
+		curr = curr.substr(pos + target.length(), curr.length() - target.length());
 		copy.append(ret);
 	}
 	copy.append(curr);
